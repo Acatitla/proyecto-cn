@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3006;
 
 app.use(express.json({ extended: true }));
 
+const bodyParser = express.json({extended: true});
+app.use(bodyParser);
+
 app.get('/', (req, res) => {
   res.send('<h1> Sean Bienvenidos </h1>');
 });

@@ -6,3 +6,4 @@ const router = express.Router();
 router.post('/users', UserController.create);
 
 module.exports = router;
+//, UserValidator.create
