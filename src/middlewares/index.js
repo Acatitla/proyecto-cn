@@ -9,8 +9,7 @@ module.exports = {
      try{ 
        const {athorization } = req.headers;
       const token =athorization.split('')[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.decoded = decoded;
+      req.decoded = jwt.verify(token, process.env.JWT_SECRET);
       next();
     }catch(error){
       res.status(401).json({error: error.message})

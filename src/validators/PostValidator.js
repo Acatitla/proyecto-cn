@@ -9,12 +9,43 @@ module.exports = {
           img_url: Joi.string(),
       }),
   }),
-  comments: celebrate({
+  delete: celebrate({
     [Segments.BODY]: Joi
       .object()
       .keys({
-        comment: Joi.string(),
+          description: Joi.string().required(),
+          img_url: Joi.string(),
+      }),
+  }),
+  like: celebrate({
+    [Segments.PARAMS]: Joi
+      .object()
+      .keys({
+        postId: Joi.string().required(),
+      }),
+  }),
+  comment: celebrate({
+    [Segments.BODY]: Joi
+      .object()
+      .keys({
         user_id: Joi.string().required(),
+      }),
+      [Segments.BODY]: Joi
+      .object()
+      .keys({
+        comment: Joi.string().required(),
+      }),
+  }),
+  commentRemove: celebrate({
+    [Segments.BODY]: Joi
+      .object()
+      .keys({
+        user_id: Joi.string().required(),
+      }),
+      [Segments.BODY]: Joi
+      .object()
+      .keys({
+        comment_id: Joi.string().required(),
       }),
   }),
 };
