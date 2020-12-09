@@ -1,4 +1,3 @@
-const router = express.Router();
 const express = require('express');
 const { PostController } = require('../controllers/index.js');
 const { PostValidator } = require('../validators/index.js');

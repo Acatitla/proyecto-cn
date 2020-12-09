@@ -17,7 +17,7 @@ app.use(dateNow);
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('<h1> Sean Bienvenidos </h1>');
+  res.send('<h1>Bienvenido</h1>');
 });
 
 app.use('/api/v1', router);

@@ -5,16 +5,15 @@ module.exports = {
     [Segments.BODY]: Joi
       .object()
       .keys({
-          description: Joi.string().required(),
-          img_url: Joi.string(),
+        description: Joi.string().required(),
+        img_url: Joi.string(),
       }),
   }),
   delete: celebrate({
-    [Segments.BODY]: Joi
+    [Segments.PARAMS]: Joi
       .object()
       .keys({
-          description: Joi.string().required(),
-          img_url: Joi.string(),
+        postId: Joi.string().required(),
       }),
   }),
   like: celebrate({
@@ -25,24 +24,24 @@ module.exports = {
       }),
   }),
   comment: celebrate({
-    [Segments.BODY]: Joi
+    [Segments.PARAMS]: Joi
       .object()
       .keys({
-        user_id: Joi.string().required(),
+        postId: Joi.string().required(),
       }),
-      [Segments.BODY]: Joi
+    [Segments.BODY]: Joi
       .object()
       .keys({
         comment: Joi.string().required(),
       }),
   }),
   commentRemove: celebrate({
-    [Segments.BODY]: Joi
+    [Segments.PARAMS]: Joi
       .object()
       .keys({
-        user_id: Joi.string().required(),
+        postId: Joi.string().required(),
       }),
-      [Segments.BODY]: Joi
+    [Segments.BODY]: Joi
       .object()
       .keys({
         comment_id: Joi.string().required(),

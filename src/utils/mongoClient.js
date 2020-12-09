@@ -5,3 +5,4 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true, useCreateInde
 connect(process.env.MONGO_URI, options)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(`Error: ${err.message}`));
+  

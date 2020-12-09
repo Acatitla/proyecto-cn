@@ -11,6 +11,5 @@ router.post('/follow/:id', verifyToken, UserValidator.follow, UserController.fol
 
 router.delete('/follow/:id', verifyToken, UserValidator.follow, UserController.unfollow);
 
-
 module.exports = router;
 //, UserValidator.create

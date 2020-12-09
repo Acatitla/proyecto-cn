@@ -13,10 +13,7 @@ const PostSchema = new Schema({
     type: String,
     default: 'https://picsum.photos/200/300',
   },
-  user_likes: [{ 
-    type: Schema.Types.ObjectId, 
-    ref: 'users' 
-  }],
+  user_likes: [{ type: Schema.Types.ObjectId, ref: 'users' }],
   comments: [{
     comment: {
       type: String,

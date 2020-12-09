@@ -22,22 +22,22 @@ module.exports = {
       }),
   }),
   update: celebrate({
-    [Segments.PARAMS]: Joi
-    .object()
-    .keys({
-      is_active: Joi.boolean(),
-      profile_image: Joi.string(),
-      first_name: Joi.string(),
-      last_name: Joi.string(),
-      email: Joi.string().email(),
-      password: Joi.string(),
-    })
+    [Segments.BODY]: Joi
+      .object()
+      .keys({
+        is_active: Joi.boolean(),
+        profile_image: Joi.string(),
+        first_name: Joi.string(),
+        last_name: Joi.string(),
+        email: Joi.string().email(),
+        password: Joi.string(),
+      }),
   }),
   follow: celebrate({
     [Segments.PARAMS]: Joi
-    .object()
-    .keys({
-      id:Joi.string().required(),
-    })
-  })
+      .object()
+      .keys({
+        id: Joi.string().required(),
+      }),
+  }),
 };
